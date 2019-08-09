@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: Njupt-Passbook
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/passbook?autoReconnect=true
+    username: root
+    password: 123
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: passbook
+    listener:
+      concurrency: 4
+  data:
+    hbase:
+      quorum: 10.164.7.220:2181
+      rootDir: file:///usr/local/hbase/hbase-tmp
+      nodeParent: /hbase
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+
+server:
+  port: 9528
+logging:
+  file: njupt-passbook.log
+  level: debug
